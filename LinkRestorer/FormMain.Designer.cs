@@ -38,29 +38,29 @@
             this.loadLinksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkLinksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.restoreLinksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeSelectedLinksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.buttonScan = new System.Windows.Forms.Button();
+            this.listBoxLinks = new System.Windows.Forms.ListBox();
+            this.buttonSave = new System.Windows.Forms.Button();
+            this.buttonLoad = new System.Windows.Forms.Button();
+            this.buttonCheck = new System.Windows.Forms.Button();
+            this.listBoxFailed = new System.Windows.Forms.ListBox();
+            this.buttonRestore = new System.Windows.Forms.Button();
+            this.textBoxSource = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.textBoxDestination = new System.Windows.Forms.TextBox();
+            this.buttonCreate = new System.Windows.Forms.Button();
+            this.buttonDelete = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButtonSymLink = new System.Windows.Forms.RadioButton();
+            this.radioButtonJunction = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
-            this.removeSelectedLinksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonRemove = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -145,6 +145,13 @@
             this.restoreLinksToolStripMenuItem.Text = "Restore Links";
             this.restoreLinksToolStripMenuItem.Click += new System.EventHandler(this.restoreLinksToolStripMenuItem_Click);
             // 
+            // removeSelectedLinksToolStripMenuItem
+            // 
+            this.removeSelectedLinksToolStripMenuItem.Name = "removeSelectedLinksToolStripMenuItem";
+            this.removeSelectedLinksToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.removeSelectedLinksToolStripMenuItem.Text = "Remove Selected Links";
+            this.removeSelectedLinksToolStripMenuItem.Click += new System.EventHandler(this.removeSelectedLinksToolStripMenuItem_Click);
+            // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
@@ -157,83 +164,83 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
-            // button1
+            // buttonScan
             // 
-            this.button1.Location = new System.Drawing.Point(5, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Scan";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonScan.Location = new System.Drawing.Point(5, 3);
+            this.buttonScan.Name = "buttonScan";
+            this.buttonScan.Size = new System.Drawing.Size(75, 23);
+            this.buttonScan.TabIndex = 2;
+            this.buttonScan.Text = "Scan";
+            this.buttonScan.UseVisualStyleBackColor = true;
+            this.buttonScan.Click += new System.EventHandler(this.button1_Click);
             // 
-            // listBox1
+            // listBoxLinks
             // 
-            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(3, 18);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(634, 194);
-            this.listBox1.TabIndex = 3;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.listBoxLinks.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBoxLinks.FormattingEnabled = true;
+            this.listBoxLinks.Location = new System.Drawing.Point(3, 18);
+            this.listBoxLinks.Name = "listBoxLinks";
+            this.listBoxLinks.Size = new System.Drawing.Size(634, 194);
+            this.listBoxLinks.TabIndex = 3;
+            this.listBoxLinks.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
-            // button2
+            // buttonSave
             // 
-            this.button2.Location = new System.Drawing.Point(86, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Save";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonSave.Location = new System.Drawing.Point(86, 3);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(75, 23);
+            this.buttonSave.TabIndex = 4;
+            this.buttonSave.Text = "Save";
+            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // buttonLoad
             // 
-            this.button3.Location = new System.Drawing.Point(167, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Load";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.buttonLoad.Location = new System.Drawing.Point(167, 3);
+            this.buttonLoad.Name = "buttonLoad";
+            this.buttonLoad.Size = new System.Drawing.Size(75, 23);
+            this.buttonLoad.TabIndex = 5;
+            this.buttonLoad.Text = "Load";
+            this.buttonLoad.UseVisualStyleBackColor = true;
+            this.buttonLoad.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button4
+            // buttonCheck
             // 
-            this.button4.Location = new System.Drawing.Point(248, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Check";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.buttonCheck.Location = new System.Drawing.Point(248, 3);
+            this.buttonCheck.Name = "buttonCheck";
+            this.buttonCheck.Size = new System.Drawing.Size(75, 23);
+            this.buttonCheck.TabIndex = 6;
+            this.buttonCheck.Text = "Check";
+            this.buttonCheck.UseVisualStyleBackColor = true;
+            this.buttonCheck.Click += new System.EventHandler(this.button4_Click);
             // 
-            // listBox2
+            // listBoxFailed
             // 
-            this.listBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(3, 18);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(634, 93);
-            this.listBox2.TabIndex = 7;
+            this.listBoxFailed.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBoxFailed.FormattingEnabled = true;
+            this.listBoxFailed.Location = new System.Drawing.Point(3, 18);
+            this.listBoxFailed.Name = "listBoxFailed";
+            this.listBoxFailed.Size = new System.Drawing.Size(634, 93);
+            this.listBoxFailed.TabIndex = 7;
             // 
-            // button5
+            // buttonRestore
             // 
-            this.button5.Location = new System.Drawing.Point(329, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 8;
-            this.button5.Text = "Restore";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.buttonRestore.Location = new System.Drawing.Point(329, 3);
+            this.buttonRestore.Name = "buttonRestore";
+            this.buttonRestore.Size = new System.Drawing.Size(75, 23);
+            this.buttonRestore.TabIndex = 8;
+            this.buttonRestore.Text = "Restore";
+            this.buttonRestore.UseVisualStyleBackColor = true;
+            this.buttonRestore.Click += new System.EventHandler(this.button5_Click);
             // 
-            // textBox1
+            // textBoxSource
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBoxSource.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(93, 21);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(454, 22);
-            this.textBox1.TabIndex = 9;
+            this.textBoxSource.Location = new System.Drawing.Point(93, 21);
+            this.textBoxSource.Name = "textBoxSource";
+            this.textBoxSource.Size = new System.Drawing.Size(454, 22);
+            this.textBoxSource.TabIndex = 9;
             // 
             // label1
             // 
@@ -253,40 +260,40 @@
             this.label2.TabIndex = 11;
             this.label2.Text = "Destination:";
             // 
-            // textBox2
+            // textBoxDestination
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBoxDestination.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(93, 46);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(454, 22);
-            this.textBox2.TabIndex = 12;
+            this.textBoxDestination.Location = new System.Drawing.Point(93, 46);
+            this.textBoxDestination.Name = "textBoxDestination";
+            this.textBoxDestination.Size = new System.Drawing.Size(454, 22);
+            this.textBoxDestination.TabIndex = 12;
             // 
-            // button6
+            // buttonCreate
             // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button6.Location = new System.Drawing.Point(553, 19);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 13;
-            this.button6.Text = "Create";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.buttonCreate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonCreate.Location = new System.Drawing.Point(553, 19);
+            this.buttonCreate.Name = "buttonCreate";
+            this.buttonCreate.Size = new System.Drawing.Size(75, 23);
+            this.buttonCreate.TabIndex = 13;
+            this.buttonCreate.Text = "Create";
+            this.buttonCreate.UseVisualStyleBackColor = true;
+            this.buttonCreate.Click += new System.EventHandler(this.button6_Click);
             // 
-            // button7
+            // buttonDelete
             // 
-            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button7.Location = new System.Drawing.Point(553, 44);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 14;
-            this.button7.Text = "Delete";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.buttonDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonDelete.Location = new System.Drawing.Point(553, 44);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(75, 23);
+            this.buttonDelete.TabIndex = 14;
+            this.buttonDelete.Text = "Delete";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.button7_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.listBox2);
+            this.groupBox1.Controls.Add(this.listBoxFailed);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox1.Location = new System.Drawing.Point(0, 370);
             this.groupBox1.Name = "groupBox1";
@@ -297,7 +304,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.listBox1);
+            this.groupBox2.Controls.Add(this.listBoxLinks);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 155);
             this.groupBox2.Name = "groupBox2";
@@ -308,14 +315,14 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.radioButton2);
-            this.groupBox3.Controls.Add(this.radioButton1);
+            this.groupBox3.Controls.Add(this.radioButtonSymLink);
+            this.groupBox3.Controls.Add(this.radioButtonJunction);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Controls.Add(this.textBox1);
-            this.groupBox3.Controls.Add(this.button7);
-            this.groupBox3.Controls.Add(this.textBox2);
-            this.groupBox3.Controls.Add(this.button6);
+            this.groupBox3.Controls.Add(this.textBoxSource);
+            this.groupBox3.Controls.Add(this.buttonDelete);
+            this.groupBox3.Controls.Add(this.textBoxDestination);
+            this.groupBox3.Controls.Add(this.buttonCreate);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox3.Location = new System.Drawing.Point(0, 55);
             this.groupBox3.Name = "groupBox3";
@@ -324,60 +331,53 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Link";
             // 
-            // radioButton2
+            // radioButtonSymLink
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(106, 77);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(70, 17);
-            this.radioButton2.TabIndex = 20;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Symbolic";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this.radioButtonSymLink.AutoSize = true;
+            this.radioButtonSymLink.Location = new System.Drawing.Point(106, 77);
+            this.radioButtonSymLink.Name = "radioButtonSymLink";
+            this.radioButtonSymLink.Size = new System.Drawing.Size(70, 17);
+            this.radioButtonSymLink.TabIndex = 20;
+            this.radioButtonSymLink.TabStop = true;
+            this.radioButtonSymLink.Text = "Symbolic";
+            this.radioButtonSymLink.UseVisualStyleBackColor = true;
+            this.radioButtonSymLink.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
-            // radioButton1
+            // radioButtonJunction
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(15, 77);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(69, 17);
-            this.radioButton1.TabIndex = 19;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Junction";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.radioButtonJunction.AutoSize = true;
+            this.radioButtonJunction.Location = new System.Drawing.Point(15, 77);
+            this.radioButtonJunction.Name = "radioButtonJunction";
+            this.radioButtonJunction.Size = new System.Drawing.Size(69, 17);
+            this.radioButtonJunction.TabIndex = 19;
+            this.radioButtonJunction.TabStop = true;
+            this.radioButtonJunction.Text = "Junction";
+            this.radioButtonJunction.UseVisualStyleBackColor = true;
+            this.radioButtonJunction.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button8);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.buttonRemove);
+            this.panel1.Controls.Add(this.buttonSave);
+            this.panel1.Controls.Add(this.buttonRestore);
+            this.panel1.Controls.Add(this.buttonScan);
+            this.panel1.Controls.Add(this.buttonCheck);
+            this.panel1.Controls.Add(this.buttonLoad);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 24);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(640, 31);
             this.panel1.TabIndex = 20;
             // 
-            // button8
+            // buttonRemove
             // 
-            this.button8.Location = new System.Drawing.Point(410, 3);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 9;
-            this.button8.Text = "Remove";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // removeSelectedLinksToolStripMenuItem
-            // 
-            this.removeSelectedLinksToolStripMenuItem.Name = "removeSelectedLinksToolStripMenuItem";
-            this.removeSelectedLinksToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.removeSelectedLinksToolStripMenuItem.Text = "Remove Selected Links";
-            this.removeSelectedLinksToolStripMenuItem.Click += new System.EventHandler(this.removeSelectedLinksToolStripMenuItem_Click);
+            this.buttonRemove.Location = new System.Drawing.Point(410, 3);
+            this.buttonRemove.Name = "buttonRemove";
+            this.buttonRemove.Size = new System.Drawing.Size(75, 23);
+            this.buttonRemove.TabIndex = 9;
+            this.buttonRemove.Text = "Remove";
+            this.buttonRemove.UseVisualStyleBackColor = true;
+            this.buttonRemove.Click += new System.EventHandler(this.button8_Click);
             // 
             // FormMain
             // 
@@ -413,20 +413,20 @@
 
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button buttonScan;
+        private System.Windows.Forms.ListBox listBoxLinks;
+        private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.Button buttonLoad;
+        private System.Windows.Forms.Button buttonCheck;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ListBox listBoxFailed;
+        private System.Windows.Forms.Button buttonRestore;
+        private System.Windows.Forms.TextBox textBoxSource;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.TextBox textBoxDestination;
+        private System.Windows.Forms.Button buttonCreate;
+        private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
@@ -438,10 +438,10 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButtonSymLink;
+        private System.Windows.Forms.RadioButton radioButtonJunction;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button buttonRemove;
         private System.Windows.Forms.ToolStripMenuItem removeSelectedLinksToolStripMenuItem;
     }
 }

@@ -98,20 +98,20 @@ namespace LinkRestorer
 
         private void ShowLinks()
         {
-            listBox1.BeginUpdate();
-            listBox1.Items.Clear();
+            listBoxLinks.BeginUpdate();
+            listBoxLinks.Items.Clear();
             foreach (var link in linkCache.Links)
             {
-                listBox1.Items.Add(link);
+                listBoxLinks.Items.Add(link);
             }
-            listBox1.EndUpdate();
-            listBox2.BeginUpdate();
-            listBox2.Items.Clear();
+            listBoxLinks.EndUpdate();
+            listBoxFailed.BeginUpdate();
+            listBoxFailed.Items.Clear();
             foreach (var link in linkCache.Failed)
             {
-                listBox2.Items.Add(link);
+                listBoxFailed.Items.Add(link);
             }
-            listBox2.EndUpdate();
+            listBoxFailed.EndUpdate();
         }
         private void RestoreLinks()
         {
@@ -127,16 +127,16 @@ namespace LinkRestorer
         private void Clear()
         {
             linkCache.ClearLinks();
-            textBox1.Text = "";
-            textBox2.Text = "";
-            radioButton1.Checked = true;
-            radioButton2.Checked = false;
+            textBoxSource.Text = "";
+            textBoxDestination.Text = "";
+            radioButtonJunction.Checked = true;
+            radioButtonSymLink.Checked = false;
             ShowLinks();
         }
 
         private void RemoveSelectedLinks()
         {
-            foreach(Link item in listBox1.SelectedItems)
+            foreach(Link item in listBoxLinks.SelectedItems)
             {
                 linkCache.Links.Remove(item);
             }
@@ -176,25 +176,25 @@ namespace LinkRestorer
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Link tempLink = new Link(textBox1.Text, textBox2.Text, radioButton2.Checked ? LinkType.Symbolic : LinkType.Junction);
+            Link tempLink = new Link(textBoxSource.Text, textBoxDestination.Text, radioButtonSymLink.Checked ? LinkType.Symbolic : LinkType.Junction);
             tempLink.Create();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            Link tempLink = new Link(textBox1.Text, textBox2.Text, radioButton2.Checked ? LinkType.Symbolic : LinkType.Junction);
+            Link tempLink = new Link(textBoxSource.Text, textBoxDestination.Text, radioButtonSymLink.Checked ? LinkType.Symbolic : LinkType.Junction);
             tempLink.DeleteLink();
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Link link = listBox1.SelectedItem as Link;
+            Link link = listBoxLinks.SelectedItem as Link;
             if (link != null)
             {
-                textBox1.Text = link.Source;
-                textBox2.Text = link.Destination;
-                radioButton1.Checked = link.Type == LinkType.Junction;
-                radioButton2.Checked = link.Type == LinkType.Symbolic;
+                textBoxSource.Text = link.Source;
+                textBoxDestination.Text = link.Destination;
+                radioButtonJunction.Checked = link.Type == LinkType.Junction;
+                radioButtonSymLink.Checked = link.Type == LinkType.Symbolic;
             }
         }
 
@@ -235,12 +235,12 @@ namespace LinkRestorer
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            radioButton2.Checked = !radioButton1.Checked;
+            radioButtonSymLink.Checked = !radioButtonJunction.Checked;
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            radioButton1.Checked = !radioButton2.Checked;
+            radioButtonJunction.Checked = !radioButtonSymLink.Checked;
         }
 
         private void removeSelectedLinksToolStripMenuItem_Click(object sender, EventArgs e)
