@@ -143,50 +143,50 @@ namespace LinkRestorer
             ShowLinks();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonScan_Click(object sender, EventArgs e)
         {
             Clear();
             ScanLinks();
             ShowLinks();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonSave_Click(object sender, EventArgs e)
         {
             SaveLinks();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void buttonLoad_Click(object sender, EventArgs e)
         {
             LoadLinks();
             ShowLinks();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void buttonCheck_Click(object sender, EventArgs e)
         {
             CheckLinks();
             ShowLinks();
 
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void buttonRestore_Click(object sender, EventArgs e)
         {
             RestoreLinks();
             ShowLinks();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void buttonCreate_Click(object sender, EventArgs e)
         {
             Link tempLink = new Link(textBoxSource.Text, textBoxDestination.Text, radioButtonSymLink.Checked ? LinkType.Symbolic : LinkType.Junction);
             tempLink.Create();
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void buttonDelete_Click(object sender, EventArgs e)
         {
             Link tempLink = new Link(textBoxSource.Text, textBoxDestination.Text, radioButtonSymLink.Checked ? LinkType.Symbolic : LinkType.Junction);
             tempLink.DeleteLink();
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void listBoxLinks_SelectedIndexChanged(object sender, EventArgs e)
         {
             Link link = listBoxLinks.SelectedItem as Link;
             if (link != null)
@@ -233,12 +233,12 @@ namespace LinkRestorer
             ShowLinks();
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        private void radioButtonJunction_CheckedChanged(object sender, EventArgs e)
         {
             radioButtonSymLink.Checked = !radioButtonJunction.Checked;
         }
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        private void radioButtonSymLink_CheckedChanged(object sender, EventArgs e)
         {
             radioButtonJunction.Checked = !radioButtonSymLink.Checked;
         }
@@ -248,7 +248,7 @@ namespace LinkRestorer
             RemoveSelectedLinks();
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void buttonRemove_Click(object sender, EventArgs e)
         {
             RemoveSelectedLinks();
         }

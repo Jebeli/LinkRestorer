@@ -172,7 +172,7 @@
             this.buttonScan.TabIndex = 2;
             this.buttonScan.Text = "Scan";
             this.buttonScan.UseVisualStyleBackColor = true;
-            this.buttonScan.Click += new System.EventHandler(this.button1_Click);
+            this.buttonScan.Click += new System.EventHandler(this.buttonScan_Click);
             // 
             // listBoxLinks
             // 
@@ -182,7 +182,7 @@
             this.listBoxLinks.Name = "listBoxLinks";
             this.listBoxLinks.Size = new System.Drawing.Size(634, 194);
             this.listBoxLinks.TabIndex = 3;
-            this.listBoxLinks.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.listBoxLinks.SelectedIndexChanged += new System.EventHandler(this.listBoxLinks_SelectedIndexChanged);
             // 
             // buttonSave
             // 
@@ -192,7 +192,7 @@
             this.buttonSave.TabIndex = 4;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
-            this.buttonSave.Click += new System.EventHandler(this.button2_Click);
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // buttonLoad
             // 
@@ -202,7 +202,7 @@
             this.buttonLoad.TabIndex = 5;
             this.buttonLoad.Text = "Load";
             this.buttonLoad.UseVisualStyleBackColor = true;
-            this.buttonLoad.Click += new System.EventHandler(this.button3_Click);
+            this.buttonLoad.Click += new System.EventHandler(this.buttonLoad_Click);
             // 
             // buttonCheck
             // 
@@ -212,7 +212,7 @@
             this.buttonCheck.TabIndex = 6;
             this.buttonCheck.Text = "Check";
             this.buttonCheck.UseVisualStyleBackColor = true;
-            this.buttonCheck.Click += new System.EventHandler(this.button4_Click);
+            this.buttonCheck.Click += new System.EventHandler(this.buttonCheck_Click);
             // 
             // listBoxFailed
             // 
@@ -231,7 +231,7 @@
             this.buttonRestore.TabIndex = 8;
             this.buttonRestore.Text = "Restore";
             this.buttonRestore.UseVisualStyleBackColor = true;
-            this.buttonRestore.Click += new System.EventHandler(this.button5_Click);
+            this.buttonRestore.Click += new System.EventHandler(this.buttonRestore_Click);
             // 
             // textBoxSource
             // 
@@ -278,7 +278,7 @@
             this.buttonCreate.TabIndex = 13;
             this.buttonCreate.Text = "Create";
             this.buttonCreate.UseVisualStyleBackColor = true;
-            this.buttonCreate.Click += new System.EventHandler(this.button6_Click);
+            this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
             // 
             // buttonDelete
             // 
@@ -289,7 +289,7 @@
             this.buttonDelete.TabIndex = 14;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = true;
-            this.buttonDelete.Click += new System.EventHandler(this.button7_Click);
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // groupBox1
             // 
@@ -341,7 +341,7 @@
             this.radioButtonSymLink.TabStop = true;
             this.radioButtonSymLink.Text = "Symbolic";
             this.radioButtonSymLink.UseVisualStyleBackColor = true;
-            this.radioButtonSymLink.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this.radioButtonSymLink.CheckedChanged += new System.EventHandler(this.radioButtonSymLink_CheckedChanged);
             // 
             // radioButtonJunction
             // 
@@ -353,7 +353,7 @@
             this.radioButtonJunction.TabStop = true;
             this.radioButtonJunction.Text = "Junction";
             this.radioButtonJunction.UseVisualStyleBackColor = true;
-            this.radioButtonJunction.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.radioButtonJunction.CheckedChanged += new System.EventHandler(this.radioButtonJunction_CheckedChanged);
             // 
             // panel1
             // 
@@ -377,7 +377,7 @@
             this.buttonRemove.TabIndex = 9;
             this.buttonRemove.Text = "Remove";
             this.buttonRemove.UseVisualStyleBackColor = true;
-            this.buttonRemove.Click += new System.EventHandler(this.button8_Click);
+            this.buttonRemove.Click += new System.EventHandler(this.buttonRemove_Click);
             // 
             // FormMain
             // 
